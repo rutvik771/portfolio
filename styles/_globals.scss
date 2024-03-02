@@ -9,21 +9,58 @@
 @import "../Components/Work/Work.scss";
 @import "../Components/Contacts/Contact.scss";
 @import "../Components/Footer/Footer.scss";
+@import "../Components/About/About.css";
 
 @font-face {
-    font-family: 'Lato';
-    src: url('../fonts/Lato-Black.ttf');
-    // src: url('../fonts/Lato-BlackItalic.ttf');
-    // src: url('../fonts/Lato-Light.ttf');
-    // src: url('../fonts/Lato-Regular.ttf');
-    // src: url('../fonts/Lato-Thin.ttf');
-    // src: url('../fonts/Lato-Bold.ttf');
-    // src: url('../fonts/Lato-BoldItalic.ttf');
-    // src: url('../fonts/Lato-Italic.ttf');
-    // src: url('../fonts/Lato-BoldItalic.ttf');
-    font-style: medium;
-  font-weight: normal;
-    }
+	font-family: 'Lato-black';
+	src: url('../fonts/Lato-Black.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato-black-italic';
+	src: url('../fonts/Lato-BlackItalic.ttf') format('truetype');
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Lato-light';
+	src: url('../fonts/Lato-Light.ttf') format('truetype');
+	font-style: light;
+}
+@font-face {
+	font-family: 'Lato-regular';
+	src: url('../fonts/Lato-Regular.ttf') format('truetype');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato-thin';
+	src: url('../fonts/Lato-Thin.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato-bold';
+	src: url('../fonts/Lato-Bold.ttf') format('truetype');
+	font-style: bold;
+}
+@font-face {
+	font-family: 'Lato-bold-italic';
+	src: url('../fonts/Lato-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lato-italic';
+	src: url('../fonts/Lato-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+	font-family: 'Lato-light-italic';
+	src: url('../fonts//Lato-LightItalic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+	font-family: 'Lato-thin-italic';
+	src: url('../fonts//Lato-ThinItalic.ttf') format('truetype');
+  font-style: italic;
+}
 body{
     margin: 0%;
 }
