@@ -62,8 +62,6 @@
 
 
 import Link from 'next/link';
-// import resume from '../../public/assets/resume/rutvik patel.pdf';
-// import '../Navbar.module.css'; // Assuming Navbar.module.css is in the styles directory
 
 
 export const Navbar = () => {
@@ -90,8 +88,7 @@ export const Navbar = () => {
             <Link href="/about">
               About
             </Link>
-            {/* External link to resume */}
-            {/* <a href={resume} target="_blank">Resume</a> */}
+            <a href='/assets/resume/rutvik_patel.pdf' target="_blank">Resume</a>
           </div>
         </nav>
       </div>
@@ -114,8 +111,7 @@ export const Navbar = () => {
             <Link href="/about" onClick={openNavbar} className="nav-link">
                 About
             </Link>
-            {/* External link to resume */}
-            {/* <a href={resume} target="_blank" className="nav-link">Resume</a> */}
+            <a href='/assets/resume/rutvik_patel.pdf' target="_blank">Resume</a>
           </div>
         </nav>
       </div>
