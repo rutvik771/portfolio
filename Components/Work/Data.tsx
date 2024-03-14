@@ -1,6 +1,6 @@
 export const workData = [
   {
-    id: 2,
+    id: 0,
     designation: "MERN Stack Developer",
     companyName: " @ Arth Infosoft Pvt Ltd",
     duration: "Jan 2022  - Apr 2022",
@@ -23,7 +23,7 @@ export const workData = [
     ],
   },
   {
-    id: 0,
+    id: 2,
     designation: "Full Stack Developer",
     companyName: " @ CreatorX",
     duration: "July 2022  - present",

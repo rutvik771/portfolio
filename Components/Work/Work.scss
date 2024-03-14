@@ -36,7 +36,9 @@
 #work .desiganation {
   height: 16rem;
   width: 70rem;
-  padding: 1rem 0rem 1rem 2rem;
+  padding: 1rem 0rem 1rem 0rem;
+  display: flex;
+  justify-content: center;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 #work .desiganation-detail {

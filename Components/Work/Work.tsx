@@ -3,7 +3,6 @@ import { workData } from "./Data";
 import { Stepper } from "react-form-stepper";
 
 export const Work = () => {
-  const [activeStep, setActiveStep] = useState(0);
   const [currentStep, setCurrentStep] = useState<number>(3);
 
   const handleNextStep = async () => {
@@ -20,7 +19,6 @@ export const Work = () => {
           <h2 className="text-3xl font-bold">Where I’ve Worked </h2>
           <Stepper
             steps={[
-              { label: "Feb 2021 - Mar 2021" },
               { label: "Jan 2022 - Apr 2022" },
               { label: "May 2022  - Jun 2022" },
               { label: "July 2022 - Sept 2023" },
@@ -50,11 +48,11 @@ export const Work = () => {
                 ?.filter((item) => {
                   return item.id === currentStep;
                 })
-                .map((item) => {
+                .map((item, index) => {
                   console.log(item, "item");
 
                   return (
-                    <>
+                    <div key={index}>
                       <div className="">
                         <p className="text-lg">
                           <span className="font-bold">{item?.designation}</span>
@@ -73,7 +71,7 @@ export const Work = () => {
                           );
                         })}
                       </div>
-                    </>
+                    </div>
                   );
                 })}
             </div>
