@@ -1,18 +1,18 @@
 module.exports = {
-  "development": {
-    "username": process.env.USERNAME,
-    "password": process.env.PASSWORD,
-    "database": process.env.portfolio,
-    "host": process.env.HOST,
-    "dialect": "mysql"
-  },
   // "development": {
-  //   "username": "root",
-  //   "password": "snrjdpsr1999",
-  //   "database": "portfolio",
-  //   "host": "localhost",
+  //   "username": process.env.USERNAME,
+  //   "password": process.env.PASSWORD,
+  //   "database": process.env.DATABASE,
+  //   "host": process.env.HOST,
   //   "dialect": "mysql"
   // },
+  "development": {
+    "username": "root",
+    "password": "snrjdpsr1999",
+    "database": "portfolio",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
   "test": {
     "username": "root",
     "password": null,
