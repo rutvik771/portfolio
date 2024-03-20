@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import nextConnect from 'next-connect';
-// const user =  require("../../../server/models").user;
 const models = require("../../../server/models/index");
 
 
-export default async function handler(req, res) {
+export default async function handler(req:any, res:any) {
   console.log(req.method, 'req.method');
   if (req.method === "GET") {
     try {
