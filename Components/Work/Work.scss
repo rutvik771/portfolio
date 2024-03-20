@@ -8,10 +8,10 @@
 }
 
 #work .main-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // padding: 1rem 0rem;
 }
 #work .btn-list {
   display: flex;
@@ -33,13 +33,23 @@
   background-color: rgb(97, 137, 47, 0.1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+#work .desiganation-container {
+  // height: 16rem;
+  width: 100%;
+  padding: 2rem 0rem 1rem 0rem;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  word-break: break-all;
+}
 #work .desiganation {
   height: 16rem;
   width: 70rem;
-  padding: 1rem 0rem 1rem 0rem;
   display: flex;
   justify-content: center;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  word-break: break-all;
+}
+#work .desiganation-break {
+  width: 60rem;
+  word-break: break-word;
 }
 #work .desiganation-detail {
   padding: 1rem 1.5rem 0rem;
