@@ -76,10 +76,10 @@ export const Work = () => {
                 })}
             </div>
             <div className="flex justify-between">
-              <button disabled={currentStep == 0} onClick={handlePrevStep}>
+              <button className="primary-btn" disabled={currentStep == 0} onClick={handlePrevStep}>
                 Previous
               </button>
-              <button disabled={currentStep == 3} onClick={handleNextStep}>
+              <button className="primary-btn" disabled={currentStep == 3} onClick={handleNextStep}>
                 Next
               </button>
             </div>
