@@ -62,9 +62,13 @@
 
 
 import Link from 'next/link';
+import { useRouter } from "next/router";
+
 
 
 export const Navbar = () => {
+  const router = useRouter();
+
   const openNavbar = () => {
     const navLinks = document.querySelector('.nav-links');
     const lines = document.querySelectorAll('.line');
@@ -75,20 +79,24 @@ export const Navbar = () => {
   };
 
   return (
+
     <>
       <div id='desktop-navbar'>
         <nav className='navbar-container'>
-          <Link href="/" className='logo'>
+          <Link href="/" className={`logo ${router.pathname == "/" ? "link-active" : ""}`}>
               Rutvik Patel
           </Link>
           <div className='menu'>
-            <Link href="/work">
+            <Link href="/work" className={router.pathname == "/work" ? "link-active" : ""}>
               Work
             </Link>
-            <Link href="/about">
+            <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
+             Blog
+            </Link>
+            <Link href="/about" className={router.pathname == "/about" ? "link-active" : ""}>
               About
             </Link>
-            <a href='/assets/resume/rutvik_patel.pdf' target="_blank">Resume</a>
+            <a href='/assets/resume/rutvik_resume.pdf' target="_blank">Resume</a>
           </div>
         </nav>
       </div>
