@@ -90,7 +90,7 @@ export const Navbar = () => {
             <Link href="/work" className={router.pathname == "/work" ? "link-active" : ""}>
               Work
             </Link>
-            <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
+            <Link href="/blog" className={router.pathname == "/blog" ? "link-active" : ""}>
              Blog
             </Link>
             <Link href="/about" className={router.pathname == "/about" ? "link-active" : ""}>
