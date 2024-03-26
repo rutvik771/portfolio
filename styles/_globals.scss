@@ -10,6 +10,7 @@
 @import "../Components/Contacts/Contact.scss";
 @import "../Components/Footer/Footer.scss";
 @import "../Components/About/About.css";
+@import "../Components/Blog/Blog.scss";
 
 @font-face {
 	font-family: 'Lato-black';
@@ -88,4 +89,15 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.primary-btn{
+	background-color: #61892f;
+	color: white;
+	border-radius: 10px;
+	padding: 10px 15px 10px 15px;
+}
+
+.primary-btn:disabled,
+.primary-btn.disabled{
+  background-color: #a0a0a0;
 }
