@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Editor from "../Editor/Editor";
-import addData from "@/firebase/firestore/addData";
+import {addData,getDataById,getAllData} from "@/firebase/firestore/controller";
 
 
 const BlogPost = () => {
@@ -10,12 +10,42 @@ const BlogPost = () => {
     const data = {
       blogData: value
     }
-    const { result, error } = await addData('users', 'user-id', data);
+    const { result, error } = await addData('users', '4', data);
     console.log(result,"result");
     
 
     if (error) {
       return console.log(error)
+    }
+  }
+  const getData = async () => {
+    try {
+      const { result, error } = await getDataById('users', '4');
+      
+      if (error) {
+        console.error("Error fetching document:", error);
+        return; // Exit the function early if there's an error
+      }
+  
+      if (result?.exists()) {
+        const userData = result.data(); // Access the data of the document
+        console.log("Document data:", userData);
+        // Now you can do something with the retrieved data
+      } else {
+        console.log("No such document!");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
+  }
+  const getAllBlogs = async () => {
+    try {
+      const blogs = await getAllData('users');
+      
+    console.log(blogs,"blogs");
+    
+    } catch (error) {
+      console.error("Error occurred:", error);
     }
   }
   return (
@@ -41,6 +71,7 @@ const BlogPost = () => {
           <div className="pt-12">
           <button className="primary-btn" type="button" onClick={() =>{setPreview(true)}}>Preview</button>
           <button className="primary-btn" type="button" onClick={() =>{handleForm()}}>submit</button>
+          <button className="primary-btn" type="button" onClick={() =>{getAllBlogs()}}>Get data</button>
           </div>
         </div>
       )}
