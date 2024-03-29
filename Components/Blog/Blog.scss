@@ -8,7 +8,6 @@
     align-items: center;
     padding: 5em 0em;
   }
-  /* styles/Home.module.css */
 
 .blog-container {
   padding: 0 0.5rem;
@@ -20,13 +19,16 @@
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+.blog-thumbnail{
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .blog-card {
   margin: 1rem;
-  padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -38,8 +40,7 @@
 .blog-card:hover,
 .blog-card:focus,
 .blog-card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #61892f;
 }
 
 h1 {
