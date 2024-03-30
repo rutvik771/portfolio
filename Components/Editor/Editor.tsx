@@ -34,11 +34,9 @@ const formats = [
 ];
 
 const Editor = ({
-  value,
-  setValue,
-  preview,
-  setPreview
-}) => {
+  blogData,
+  setBlogData,
+}:any) => {
 
   useEffect(() => {
     // Ensure that React Quill is loaded on the client-side
@@ -55,8 +53,8 @@ const Editor = ({
       modules={modules}
       formats={formats}
       theme="snow"
-      value={value}
-      onChange={(value) => setValue(value)}
+      value={blogData.content || ""}
+      onChange={(value) => setBlogData({...blogData, content:value})}
     />
     </>
   );

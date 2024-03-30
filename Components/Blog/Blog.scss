@@ -60,9 +60,30 @@ h1 {
 }
 
 .preview-container{
-  width: 80%;
+  display: flex;
+  justify-content: center;
+  width: 70%;
   background-color: #222629;
   color: #cecfd2;
   padding: 3em 0em;
 
+}
+.preview-content{
+ padding-top: 1em;
+}
+.preview-content h1{
+  font-size: 1.6em;
+}
+.preview-content h2{
+  font-size: 1.5em;
+}
+
+.preview-content strong{
+  color: #61892f;
+}
+.preview-content img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
