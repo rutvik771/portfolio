@@ -51,10 +51,8 @@ const index = () => {
             <div className="blog-card">
                   <img
                     className="blog-thumbnail"
-                    src="/assets/blog-thumnail.jpeg"
+                    src={blog?.thumbnail_img_url ? blog?.thumbnail_img_url :"/assets/blog-thumnail.jpeg"}
                     alt="tech"
-                    width={500}
-                    height={180}
                   />
                   <div className="p-4">
                     <h2 className="primary-text text-xl font-bold	">
@@ -71,7 +69,7 @@ const index = () => {
                       }
 
                       </div>
-                      <p className="primary-text">{blog?.publishDate?.seconds}</p>
+                      <p className="primary-text">{blog?.publishDate}</p>
                     </div>
                   </div>
                 </div>

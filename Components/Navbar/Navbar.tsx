@@ -98,7 +98,7 @@ export const Navbar = () => {
             </Link>
             <a href='/assets/resume/rutvik_resume.pdf' target="_blank">Resume</a>
             <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
-              create blog
+              writing
             </Link>
           </div>
         </nav>
