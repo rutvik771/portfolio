@@ -98,3 +98,13 @@ h1 {
   margin-right: auto;
   width: 70%;
 }
+.preview-content pre{
+  padding: 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.7rem;
+    border: none;
+    margin: 2rem 0rem;
+    background-color: #222629;
+    box-shadow: -5px -5px 15px 0px rgb(255 255 255 / 9%), 10px 10px 15px 0px rgb(0 0 0 / 60%);
+    transition: all 500ms ease;
+}
