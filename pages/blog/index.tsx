@@ -50,7 +50,7 @@ const index = () => {
               <div className="blog-container">
                 <div className="blog-grid">
                   {blogList.map((blog:any) => (
-                    <Link key={blog.id} href={`/blog/${blog.id}`}>
+                    <Link key={blog.id} target="_blank" href={`/blog/${blog.id}`}>
                       <div className="blog-card">
                         <img
                           className="blog-thumbnail"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Textarea } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import moment from "moment";
 import Editor from "../Editor/Editor";
 import {
@@ -10,7 +11,7 @@ import {
 import ViewBlog from "./ViewBlog";
 
 const BlogPost = () => {
-  const [value, setValue] = useState("");
+  const router = useRouter();
   const [blogData, setBlogData] = useState({
     slug: "",
     thumbnail_img_url: "",
@@ -42,7 +43,7 @@ const BlogPost = () => {
     // return
     const { result, error } = await addData("blogs", slug , data);
     console.log(result, "result");
-
+    router.push(`/blog`);
     if (error) {
       return console.log(error);
     }
