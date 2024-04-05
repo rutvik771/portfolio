@@ -1,13 +1,13 @@
 #blog {
-    background-color: #222629;
-    color: #cecfd2;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5em 0em;
-  }
+  background-color: #222629;
+  color: #cecfd2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 0em;
+}
 
 .blog-container {
   padding: 0 0.5rem;
@@ -22,7 +22,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-.blog-thumbnail{
+.blog-thumbnail {
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   width: 500px;
@@ -49,62 +49,61 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.editor-container{
-    width: 80%;
-    background-color: #222629;
-    color: #cecfd2;
-    padding: 3em 0em;
+.editor-container {
+  width: 80%;
+  background-color: #222629;
+  color: #cecfd2;
+  padding: 3em 0em;
+}
+.editor {
+  width: 100%;
+  height: 80vh;
+}
+.upload-img-btn {
+  background-color: #222629;
+  color: #cecfd2;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1em;
+}
 
-}
-.editor{
-    width: 100%;
-    height: 80vh; 
-}
-.upload-img-btn{
-    background-color: #222629;
-    color: #cecfd2;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1em;
-}
-
-.preview-container{
+.preview-container {
   display: flex;
   justify-content: center;
   width: 70%;
   background-color: #222629;
   color: #cecfd2;
   padding: 3em 0em;
-
 }
-.preview-content{
- padding-top: 1em;
+.preview-content {
+  padding-top: 1em;
 }
-.preview-content h1{
+.preview-content h1 {
   font-size: 1.6em;
 }
-.preview-content h2{
+.preview-content h2 {
   font-size: 1.5em;
 }
 
 // .preview-content strong{
 //   color: #61892f;
 // }
-.preview-content img{
+.preview-content img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
 }
-.preview-content pre{
+.preview-content pre {
   padding: 1.5rem;
-    font-size: 1.2rem;
-    border-radius: 0.7rem;
-    border: none;
-    margin: 2rem 0rem;
-    background-color: #222629;
-    box-shadow: -5px -5px 15px 0px rgb(255 255 255 / 9%), 10px 10px 15px 0px rgb(0 0 0 / 60%);
-    transition: all 500ms ease;
+  font-size: 1.2rem;
+  border-radius: 0.7rem;
+  border: none;
+  margin: 2rem 0rem;
+  background-color: #222629;
+  box-shadow: -5px -5px 15px 0px rgb(255 255 255 / 9%),
+    10px 10px 15px 0px rgb(0 0 0 / 60%);
+  transition: all 500ms ease;
 }

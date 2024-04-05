@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic"; // Import dynamic from next/dynamic to load React Quill client-side
 import "react-quill/dist/quill.snow.css";
 import EditorToolbar, { modules, formats } from "./EditorToolbar";
-import { IoMdUndo, IoMdRedo } from "react-icons/io";
-// Dynamic import ReactQuill to ensure it's only loaded on the client-side
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading Quill editor...</p>,
@@ -35,8 +33,6 @@ const ReactQuill = dynamic(() => import("react-quill"), {
 // ];
 
 const Editor = ({ blogData, setBlogData }: any) => {
-
-
   return (
     <>
       <EditorToolbar />

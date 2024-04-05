@@ -1,10 +1,15 @@
 import React from "react";
 
-const ViewBlog = ({ blogData, setBlogData, preview, setPreview,handlePublishBlog }: any) => {
+const ViewBlog = ({
+  blogData,
+  setBlogData,
+  preview,
+  setPreview,
+  handlePublishBlog,
+}: any) => {
   return (
     <div className="preview-container">
       <div>
-        {/* <h2 className="text-center text-3xl py-2">Preview</h2> */}
         <h1 className="text-center text-4xl font-bold">{blogData.title}</h1>
         <div
           className="preview-content"
@@ -24,7 +29,7 @@ const ViewBlog = ({ blogData, setBlogData, preview, setPreview,handlePublishBlog
             className="primary-btn"
             type="button"
             onClick={() => {
-                handlePublishBlog();
+              handlePublishBlog();
             }}
           >
             Publish
