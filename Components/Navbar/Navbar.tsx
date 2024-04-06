@@ -60,7 +60,7 @@
 // 	)
 // }
 
-
+import React, { useEffect } from 'react'
 import Link from 'next/link';
 import { useRouter } from "next/router";
 
@@ -68,6 +68,22 @@ import { useRouter } from "next/router";
 
 export const Navbar = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    // Scroll to the "Work" section when the route changes
+    const handleRouteChange = () => {
+      const element = document.getElementById('work');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   const openNavbar = () => {
     const navLinks = document.querySelector('.nav-links');
@@ -77,6 +93,19 @@ export const Navbar = () => {
       line.classList.toggle('active');
     });
   };
+  // const handleRouteChange = () => {
+  //   console.log(router.pathname == "/" ,'router.pathname');
+  //   const element = document.getElementById('work');
+  //   if(router.pathname != "/"){
+  //       router.push('/');
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: 'smooth' });
+  //       }
+  //   }
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
 
@@ -87,7 +116,7 @@ export const Navbar = () => {
               Rutvik Patel
           </Link>
           <div className='menu'>
-            <Link href="/work" className={router.pathname == "/work" ? "link-active" : ""}>
+            <Link href="/#work" className={router.pathname.includes("#work") ? "link-active" : ""}>
               Work
             </Link>
             <Link href="/blog" className={router.pathname == "/blog" ? "link-active" : ""}>

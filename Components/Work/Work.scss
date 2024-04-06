@@ -1,18 +1,11 @@
 #work {
   background-color: #222629;
   color: #cecfd2;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3em;
-}
-
-#work .main-content {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // padding: 1rem 0rem;
+  padding-top: 5em;
 }
 #work .btn-list {
   display: flex;
@@ -43,11 +36,12 @@
 }
 #work .desiganation {
   min-height: 1r5em;
-  max-height: 25rem;
+  max-height: 28rem;
   width: 70rem;
   display: flex;
   justify-content: center;
   word-break: break-all;
+  font-size: 1.2rem;
 }
 #work .desiganation-break {
   width: 60rem;
@@ -58,7 +52,7 @@
 }
 #work .desiganation-detail ul {
   list-style-type: disc;
-  color: rgb(233, 232, 232, 0.6);
+  opacity: 0.8;
 }
 
 @media (max-width: 786px) {
