@@ -42,7 +42,8 @@
   word-break: break-all;
 }
 #work .desiganation {
-  height: 16rem;
+  min-height: 1r5em;
+  max-height: 25rem;
   width: 70rem;
   display: flex;
   justify-content: center;

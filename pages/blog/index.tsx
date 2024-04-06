@@ -1,4 +1,5 @@
 import BlogPost from "@/Components/Blog/BlogPost";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -27,6 +28,9 @@ const index = () => {
       setIsLoading(false);
     }
   };
+  const imageLoader = ({src}:any) => {
+    return `${src}?q=${100}`
+  }
   return (
     <>
       {isLoading ? (
@@ -37,7 +41,7 @@ const index = () => {
             <div className="flex justify-center">
               <div className="w-9/12 text-center">
                 <h2 className="text-3xl font-bold	">Hey, I'm Rutvik 👋</h2>
-                <p className="text-lg font-normal py-2">
+                <p className="text-lg font-normal py-2 primary-text">
                   Welcome to my blog where I share my thoughts on software
                   engineering, programming, and technology. I write about my
                   experiences in the tech industry, programming languages, and
@@ -49,10 +53,15 @@ const index = () => {
             <div>
               <div className="blog-container">
                 <div className="blog-grid">
-                  {blogList.map((blog:any) => (
-                    <Link key={blog.id} target="_blank" href={`/blog/${blog.id}`}>
+                  {blogList.map((blog: any) => (
+                    <Link
+                      key={blog.id}
+                      target="_blank"
+                      href={`/blog/${blog.id}`}
+                    >
                       <div className="blog-card">
-                        <img
+                        <Image
+                          loader={imageLoader}
                           className="blog-thumbnail"
                           src={
                             blog?.thumbnail_img_url
@@ -60,6 +69,8 @@ const index = () => {
                               : "/assets/blog-thumnail.jpeg"
                           }
                           alt="tech"
+                          width={500}
+                          height={250}
                         />
                         <div className="p-4">
                           <h2 className="primary-text text-xl font-bold	">
@@ -67,7 +78,7 @@ const index = () => {
                           </h2>
                           <div className="flex justify-between pt-2">
                             <div className="flex gap-3">
-                              {blog.techStack.map((tech:any) => (
+                              {blog.techStack.map((tech: any) => (
                                 <p className="secondary-text text-lg font-normal	">
                                   {tech}
                                 </p>

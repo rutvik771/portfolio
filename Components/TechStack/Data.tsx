@@ -30,19 +30,31 @@ export const workData1 = [
     },
     {
         id: 7,
-        image:'/assets/techstack/react.png'
+        image:'/assets/techstack/chakra-ui.png'
     },
     {
         id: 8,
-        image:'/assets/techstack/node.png'
+        image:'/assets/techstack/react.png'
     },
     {
         id: 9,
-        image:'/assets/techstack/mongodb.png'
+        image:'/assets/techstack/nextjs.png'
     },
     {
         id: 10,
+        image:'/assets/techstack/node.png'
+    },
+    {
+        id: 11,
+        image:'/assets/techstack/mongodb.png'
+    },
+    {
+        id: 12,
         image:'/assets/techstack/mysql.png'
+    },
+    {
+        id: 13,
+        image:'/assets/techstack/aws.png'
     },
 ]
 
