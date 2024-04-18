@@ -78,7 +78,7 @@ const index = () => {
                           </h2>
                           <div className="flex justify-between pt-2">
                             <div className="flex gap-3">
-                              {blog.techStack.map((tech: any) => (
+                              {blog.techStack && blog.techStack?.map((tech: any) => (
                                 <p className="secondary-text text-lg font-normal	">
                                   {tech}
                                 </p>

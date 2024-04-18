@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useEffect} from "react";
+
 
 const ViewBlog = ({
   blogData,
@@ -7,14 +8,18 @@ const ViewBlog = ({
   setPreview,
   handlePublishBlog,
 }: any) => {
+
+
   return (
     <div className="preview-container">
       <div>
         <h1 className="text-center text-4xl font-bold">{blogData.title}</h1>
         <div
-          className="preview-content"
-          dangerouslySetInnerHTML={{ __html: blogData.content }}
-        ></div>
+        className="preview-content"
+        dangerouslySetInnerHTML={{ __html: blogData.content }}
+        >
+         {/* <Highlighter blogData={blogData.content} /> */}
+        </div>
         <div className="flex justify-end	gap-3 mt-6">
           <button
             className="primary-btn pt-14"

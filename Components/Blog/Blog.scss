@@ -81,20 +81,31 @@ h1 {
   padding-top: 1em;
 }
 .preview-content h1 {
-  font-size: 1.6em;
+  font-size: 3em;
+  font-weight: 500;
 }
 .preview-content h2 {
-  font-size: 1.5em;
+  font-size: 2.2em;
+  font-weight: 500;
 }
-
-// .preview-content strong{
-//   color: #61892f;
-// }
+.preview-content p{
+  font-size: 1.2em;
+  line-height: 1.8em;
+  opacity: 0.7;
+}
+.preview-content strong{
+  color: #86C232;
+}
 .preview-content img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+}
+.preview-content a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #86C232;
 }
 .preview-content pre {
   padding: 1.5rem;

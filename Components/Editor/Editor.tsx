@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import dynamic from "next/dynamic"; // Import dynamic from next/dynamic to load React Quill client-side
 import "react-quill/dist/quill.snow.css";
 import EditorToolbar, { modules, formats } from "./EditorToolbar";
@@ -7,34 +8,16 @@ const ReactQuill = dynamic(() => import("react-quill"), {
   loading: () => <p>Loading Quill editor...</p>,
 });
 
-// Define modules and formats
-// const modules = {
-//   toolbar: [
-//       [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-//       [{size: []}],
-//       [{ 'undo': <IoMdUndo/> }, { 'redo': <IoMdRedo /> }], // Specify custom icons for undo and redo buttons
-//       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-//       [{'list': 'ordered'}, {'list': 'bullet'},
-//       {'indent': '-1'}, {'indent': '+1'}],
-//       ['link', 'image', 'video'],
-//       ['clean'],
-//   ],
-//   clipboard: {
-//       // toggle to add extra line breaks when pasting HTML:
-//       matchVisual: false,
-//   }
-// };
-
-// const formats = [
-//   'header', 'font', 'size',
-//   'bold', 'italic', 'underline', 'strike', 'blockquote',
-//   'list', 'bullet', 'indent',
-//   'link', 'image', 'video'
-// ];
-
 const Editor = ({ blogData, setBlogData }: any) => {
   return (
-    <>
+    <div>
+      <Head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css"
+        />
+      </Head>
       <EditorToolbar />
       <ReactQuill
         className="editor"
@@ -44,7 +27,7 @@ const Editor = ({ blogData, setBlogData }: any) => {
         value={blogData.content || ""}
         onChange={(value) => setBlogData({ ...blogData, content: value })}
       />
-    </>
+    </div>
   );
 };
 

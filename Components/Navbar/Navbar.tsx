@@ -69,21 +69,40 @@ import { useRouter } from "next/router";
 export const Navbar = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    // Scroll to the "Work" section when the route changes
-    const handleRouteChange = () => {
-      const element = document.getElementById('work');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
+  console.log(router.pathname, 'router.pathname');
+  
 
-    router.events.on('routeChangeComplete', handleRouteChange);
+  // useEffect(() => {
+  //   // Scroll to the "Work" section when the route changes
+  //   const handleRouteChange = () => {
+  //     const element = document.getElementById('work');
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   };
 
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
+  //   router.events.on('routeChangeComplete', handleRouteChange);
+
+  //   return () => {
+  //     router.events.off('routeChangeComplete', handleRouteChange);
+  //   };
+  // }, [router.events]);
+
+  const handleWorkClick = (e:any) => {
+    e.preventDefault();
+    if (router.pathname === '/') {
+      scrollToWork();
+    } else {
+      router.push('/#work');
+    }
+  };
+
+  const scrollToWork = () => {
+    const workSection = document.getElementById('work');
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   const openNavbar = () => {
     const navLinks = document.querySelector('.nav-links');
@@ -116,7 +135,7 @@ export const Navbar = () => {
               Rutvik Patel
           </Link>
           <div className='menu'>
-            <Link href="/#work" className={router.pathname.includes("#work") ? "link-active" : ""}>
+            <Link href="#" onClick={handleWorkClick} className={router.pathname.includes("#work") ? "link-active" : ""}>
               Work
             </Link>
             <Link href="/blog" className={router.pathname == "/blog" ? "link-active" : ""}>
