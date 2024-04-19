@@ -1,4 +1,6 @@
 import React,{useEffect} from "react";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark.css";
 
 
 const ViewBlog = ({
@@ -9,7 +11,31 @@ const ViewBlog = ({
   handlePublishBlog,
 }: any) => {
 
+  useEffect(() => {
+    // Highlight code snippets after component mounts
+    const highlightedContent: any = highlightCodeSnippets(blogData?.content);
+    // Set the modified content with highlighted code snippets
+    let selector = document.querySelector(".preview-content") as any;
+    selector.innerHTML = highlightedContent;
+  }, [blogData.content]);
 
+  
+  // Function to highlight code snippets within HTML content
+  const highlightCodeSnippets = (content: any) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = content;
+
+    // Select all <pre> elements containing code snippets
+    const codeSnippets = tempElement.querySelectorAll("pre");
+
+    // Apply syntax highlighting to each code snippet
+    codeSnippets.forEach((snippet) => {
+      hljs.highlightBlock(snippet);
+    });
+
+    // Return the modified HTML content with highlighted code snippets
+    return tempElement.innerHTML;
+  };
   return (
     <div className="preview-container">
       <div>
@@ -18,7 +44,6 @@ const ViewBlog = ({
         className="preview-content"
         dangerouslySetInnerHTML={{ __html: blogData.content }}
         >
-         {/* <Highlighter blogData={blogData.content} /> */}
         </div>
         <div className="flex justify-end	gap-3 mt-6">
           <button
