@@ -27,6 +27,10 @@
     font-size: 4rem;
   }
   @media (max-width: 768px) {
+    #hero {
+      padding: 4rem 3rem 4rem;
+      width: auto;
+    }
     #hero .hero-container {
       padding: 3.5rem;
       display: flex;
@@ -37,11 +41,15 @@
     #hero .content {
       width: auto;
     }
+    #hero .hero-img {
+      display: none;
+     }
   }
   
   @media (max-width: 576px) {
     #hero {
-      padding: 4rem 3rem 8rem;
+      padding: 4rem 3rem 2rem;
+      width: auto;
     }
     #hero .hero-container {
       padding: 3.5rem 0rem;

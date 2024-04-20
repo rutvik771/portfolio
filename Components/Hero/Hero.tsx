@@ -1,6 +1,4 @@
 import React from 'react'
-// import './hero.css'
-// import sw from './sw.png';
 
 export const Hero = () => {
     return (

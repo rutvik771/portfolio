@@ -101,3 +101,17 @@ section{
 .primary-btn.disabled{
   background-color: #a0a0a0;
 }
+@media (max-width: 768px) {
+	.heading{
+		font-size: 2rem;
+	 }
+	 .primary-btn{
+		padding: 8px 12px;
+	}
+}
+
+@media (max-width: 576px) {
+	.heading{
+		font-size: 1.8rem;
+	 }
+}

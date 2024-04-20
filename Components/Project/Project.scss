@@ -40,11 +40,17 @@
     font-family: lato-regular;
 }
 @media (max-width: 768px) {
+    #project{
+        padding: 4rem 0rem 0rem;
+    }
     #project .main-content{
         flex-direction: column;
       }
 }
 @media (max-width: 576px) {
+    #project{
+        padding: 2rem 0rem 0rem;
+    }
     #project .project-introduction{
         width: 21rem;
     }
