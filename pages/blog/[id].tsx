@@ -79,8 +79,8 @@ const blog = () => {
       ) : (
         <>
         <Head>
-            <title>{blogData.title ? blogData.title : 'next js'}</title>
-            <meta name="description" content={blogData.title ? blogData.title : 'next js'} />
+            <title>{blogData.title ? blogData.title : 'Blogs'}</title>
+            <meta name="description" content={blogData.title ? blogData.title : 'Blogs'} />
             <meta name="keywords" content={blogData?.techStack ? blogData?.techStack?.toString() : ""} />
             <meta name="robots" content="index, follow" />
             <meta name="author" content="Rutvik Patel" />

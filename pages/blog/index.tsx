@@ -40,10 +40,10 @@ const index = () => {
       ) : (
         <>
           <Head>
-            <title>{blogList[0] ? blogList[0]?.title : ""}</title>
+            <title>{blogList[0] ? blogList[0]?.title : "Blogs"}</title>
             <meta
               name="description"
-              content={blogList[0] ? blogList[0]?.title : ""}
+              content={blogList[0] ? blogList[0]?.title : "Blogs"}
             />
             <meta
               name="keywords"
