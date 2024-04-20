@@ -26,7 +26,7 @@ export const workData = [
     id: 2,
     designation: "Full Stack Developer",
     companyName: " @ CreatorX",
-    duration: "July 2022  - present",
+    duration: "July 2022  - Sept 2023",
     work: [
       "Developed a platform to connect brands with influencers for sponsored content.",
       "Utilized React for front-end design and Node.js and MYSQL for back-end development",
