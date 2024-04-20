@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
 import { useRouter } from "next/router";
@@ -12,7 +13,7 @@ import Loader from "@/Components/Loader";
 const blog = () => {
   const router = useRouter();
   const { id } = router.query;
-  const [blogData, setBlogData] = useState({
+  const [blogData, setBlogData] = useState<any>({
     slug: "",
     title: "",
     content: "",
@@ -69,12 +70,22 @@ const blog = () => {
     // Return the modified HTML content with highlighted code snippets
     return tempElement.innerHTML;
   };
+  console.log(blogData.techStack?.toString(), "blogData");
+  
   return (
     <>
       {isLoading ? (
         <Loader isLoading={isLoading} />
       ) : (
         <>
+        <Head>
+            <title>{blogData.title ? blogData.title : 'next js'}</title>
+            <meta name="description" content={blogData.title ? blogData.title : 'next js'} />
+            <meta name="keywords" content={blogData?.techStack ? blogData?.techStack?.toString() : ""} />
+            <meta name="robots" content="index, follow" />
+            <meta name="author" content="Rutvik Patel" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          </Head>
           <div id="blog">
             <div className="preview-container">
               <div>
