@@ -26,7 +26,7 @@ export const workData = [
     id: 2,
     designation: "Full Stack Developer",
     companyName: " @ CreatorX",
-    duration: "July 2022  - present",
+    duration: "July 2022  - Sept 2023",
     work: [
       "Developed a platform to connect brands with influencers for sponsored content.",
       "Utilized React for front-end design and Node.js and MYSQL for back-end development",
@@ -41,9 +41,13 @@ export const workData = [
     companyName: " @ MP Consulting, LLC",
     duration: "Aug 2023 - Present",
     work: [
-      "Developed registration forms for a college web application using PHP and HTML,CSS.",
-      "Gained familiarity with GIT,Github and VS code during the Project.",
-      "Learn about project management and time management.",
+      "Developed and maintained web applications using Next.js and Chakra UI for frontend,and Node.js with MySQL for backend functionalities", 
+      "Implemented deployment strategies utilizing AWS services such as EC2, Amplify, RDS, and S3 buckets for seamless application hosting and management", 
+      "Designed and implemented global permission systems, enabling user-specific and role-based access control across various modules, including module permissions similar to a project's structure", 
+      "Spearheaded the development of the billing module, overseeing its integration within the application framework", 
+      "Engineered a robust MFA (Multi-Factor Authentication) module for enhanced security measures and user authentication", 
+      "Solely responsible for managing the entire development lifecycle of mentioned features, from conceptualization to deployment, as a single developer", 
+      "Conducted thorough code reviews, ensuring adherence to best practices, code quality, and project requirements."
     ],
   },
 ];

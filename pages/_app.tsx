@@ -3,11 +3,12 @@ import { Navbar } from "@/Components/Navbar/Navbar";
 import "../styles/app.scss";
 import type { AppProps } from "next/app";
 import { Footer } from "@/Components/Footer/Footer";
-import SyncLoader from "react-spinners/SyncLoader";
+import Loader from '@/Components/Loader';
+
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [color, setColor] = useState("#86C232");
+
 
   const override = {
     backgroundColor: '#222629',
@@ -31,13 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
     {
       isLoading ?
-        <div className='loader'>
-          <SyncLoader
-            color={color}
-            loading={isLoading}
-            size={16}
-          />
-        </div>
+        <Loader
+         isLoading={isLoading}
+        />
         :
         <>
         <Navbar/>

@@ -1,7 +1,7 @@
 #about {
   background-color: #222629;
   color: #cecfd2;
-  height: 100vh;
+  height: 100%;
 }
 #about .about-container {
   display: flex;

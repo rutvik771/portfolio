@@ -1,11 +1,11 @@
 export const workData = [
-    {
-        id: 0,
-        link:'',
-        name: 'Restaurant website',
-        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci beatae quidem atque soluta doloremque? Libero.",
-        technology:['HTML','CSS','Java-script','Bootstrap']
-    },
+    // {
+    //     id: 0,
+    //     link:'',
+    //     name: 'Restaurant website',
+    //     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci beatae quidem atque soluta doloremque? Libero.",
+    //     technology:['HTML','CSS','Java-script','Bootstrap']
+    // },
     {
         id: 1,
         link:'https://www.npmjs.com/package/react-icon-cx',

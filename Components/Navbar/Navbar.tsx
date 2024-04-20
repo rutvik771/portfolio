@@ -60,7 +60,7 @@
 // 	)
 // }
 
-
+import React, { useEffect } from 'react'
 import Link from 'next/link';
 import { useRouter } from "next/router";
 
@@ -68,6 +68,41 @@ import { useRouter } from "next/router";
 
 export const Navbar = () => {
   const router = useRouter();
+
+  console.log(router.pathname, 'router.pathname');
+  
+
+  // useEffect(() => {
+  //   // Scroll to the "Work" section when the route changes
+  //   const handleRouteChange = () => {
+  //     const element = document.getElementById('work');
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   };
+
+  //   router.events.on('routeChangeComplete', handleRouteChange);
+
+  //   return () => {
+  //     router.events.off('routeChangeComplete', handleRouteChange);
+  //   };
+  // }, [router.events]);
+
+  const handleWorkClick = (e:any) => {
+    e.preventDefault();
+    if (router.pathname === '/') {
+      scrollToWork();
+    } else {
+      router.push('/#work');
+    }
+  };
+
+  const scrollToWork = () => {
+    const workSection = document.getElementById('work');
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   const openNavbar = () => {
     const navLinks = document.querySelector('.nav-links');
@@ -77,6 +112,19 @@ export const Navbar = () => {
       line.classList.toggle('active');
     });
   };
+  // const handleRouteChange = () => {
+  //   console.log(router.pathname == "/" ,'router.pathname');
+  //   const element = document.getElementById('work');
+  //   if(router.pathname != "/"){
+  //       router.push('/');
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: 'smooth' });
+  //       }
+  //   }
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
 
@@ -87,16 +135,19 @@ export const Navbar = () => {
               Rutvik Patel
           </Link>
           <div className='menu'>
-            <Link href="/work" className={router.pathname == "/work" ? "link-active" : ""}>
+            <Link href="#" onClick={handleWorkClick} className={router.pathname.includes("#work") ? "link-active" : ""}>
               Work
             </Link>
-            <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
+            <Link href="/blog" className={router.pathname == "/blog" ? "link-active" : ""}>
              Blog
             </Link>
             <Link href="/about" className={router.pathname == "/about" ? "link-active" : ""}>
               About
             </Link>
             <a href='/assets/resume/rutvik_resume.pdf' target="_blank">Resume</a>
+            <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
+              writing
+            </Link>
           </div>
         </nav>
       </div>
