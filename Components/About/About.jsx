@@ -11,8 +11,10 @@ export const About = () => {
   return (
     <section id='about'>
       <div className='about-container'>
-        <div>
-          <p className='text-3xl font-bold mb-6 opacity-90'>About Me</p>
+        <div className='responsive-container'>
+          <div>
+          <p className='about-title'>About Me</p>
+          </div>
           <div className='main-content gap-x-6 gap-y-6'>
             <div className=''>
               <div>

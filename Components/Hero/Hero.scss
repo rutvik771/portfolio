@@ -1,64 +1,69 @@
 #hero {
-    background-color: #222629;
-    color: #CECFD2;
-    padding: 6rem 5rem 8rem;
+  background-color: #222629;
+  color: #cecfd2;
+  padding: 6rem 5rem 8rem;
+}
+
+#hero .hero-container {
+  padding: 3.5rem 12rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#hero .content {
+  width: 26rem;
+  font-family: "Lato-light";
+  font-size: 2.3rem;
+}
+#hero .custom-bold {
+  font-family: "Lato-bold";
+  padding-left: 0.3rem;
+}
+#hero .hero-img {
+  height: 27rem;
+}
+#hero .heading {
+  font-family: "Lato-bold";
+  font-size: 4rem;
+}
+@media (max-width: 768px) {
+  #hero {
+    padding: 4rem 3rem 4rem;
+    width: auto;
   }
-  
   #hero .hero-container {
-    padding: 3.5rem 12rem 0rem;
+    padding: 3.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
   }
   #hero .content {
-    width: 26rem;
-    font-family: "Lato-light";
-    font-size: 2.3rem;
-  }
-  #hero .custom-bold{
-    font-family: "Lato-bold";
-    padding-left: 0.3rem;
+    width: auto;
   }
   #hero .hero-img {
-   height: 27rem;
+    display: none;
   }
-  #hero .heading {
-    font-family: "Lato-bold";
-    font-size: 4rem;
+}
+
+@media (max-width: 576px) {
+  #hero {
+    padding: 4rem 1.7rem 2rem;
+    width: auto;
   }
-  @media (max-width: 768px) {
-    #hero {
-      padding: 4rem 3rem 4rem;
-      width: auto;
-    }
-    #hero .hero-container {
-      padding: 3.5rem;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-    }
-    #hero .content {
-      width: auto;
-    }
-    #hero .hero-img {
-      display: none;
-     }
+  #hero .hero-container {
+    padding: 3.5rem 0rem;
   }
-  
-  @media (max-width: 576px) {
-    #hero {
-      padding: 4rem 3rem 2rem;
-      width: auto;
-    }
-    #hero .hero-container {
-      padding: 3.5rem 0rem;
-    }
-    #hero .content {
-      font-size: 1.6rem;
-    }
-    #hero .hero-img {
-      height: 18rem;
-      width: 18rem;
-     }
+  #hero .content {
+    font-size: 1.6rem;
   }
+}
+@media (max-width: 320px) {
+  #hero {
+    padding: 4rem 1rem 2rem;
+    width: auto;
+  }
+  #hero .content {
+    font-size: 1.4rem;
+  }
+}

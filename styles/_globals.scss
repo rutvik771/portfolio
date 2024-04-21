@@ -13,105 +13,110 @@
 @import "../Components/Blog/Blog.scss";
 
 @font-face {
-	font-family: 'Lato-black';
-	src: url('../fonts/Lato-Black.ttf') format('truetype');
-	font-style: normal;
+  font-family: "Lato-black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+  font-style: normal;
 }
 @font-face {
-	font-family: 'Lato-black-italic';
-	src: url('../fonts/Lato-BlackItalic.ttf') format('truetype');
-	font-style: italic;
-}
-@font-face {
-	font-family: 'Lato-light';
-	src: url('../fonts/Lato-Light.ttf') format('truetype');
-	font-style: light;
-}
-@font-face {
-	font-family: 'Lato-regular';
-	src: url('../fonts/Lato-Regular.ttf') format('truetype');
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Lato-thin';
-	src: url('../fonts/Lato-Thin.ttf') format('truetype');
-	font-weight: 200;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Lato-bold';
-	src: url('../fonts/Lato-Bold.ttf') format('truetype');
-	font-style: bold;
-}
-@font-face {
-	font-family: 'Lato-bold-italic';
-	src: url('../fonts/Lato-BoldItalic.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'Lato-italic';
-	src: url('../fonts/Lato-Italic.ttf') format('truetype');
+  font-family: "Lato-black-italic";
+  src: url("../fonts/Lato-BlackItalic.ttf") format("truetype");
   font-style: italic;
 }
 @font-face {
-	font-family: 'Lato-light-italic';
-	src: url('../fonts//Lato-LightItalic.ttf') format('truetype');
+  font-family: "Lato-light";
+  src: url("../fonts/Lato-Light.ttf") format("truetype");
+  font-style: light;
+}
+@font-face {
+  font-family: "Lato-regular";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato-thin";
+  src: url("../fonts/Lato-Thin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato-bold";
+  src: url("../fonts/Lato-Bold.ttf") format("truetype");
+  font-style: bold;
+}
+@font-face {
+  font-family: "Lato-bold-italic";
+  src: url("../fonts/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato-italic";
+  src: url("../fonts/Lato-Italic.ttf") format("truetype");
   font-style: italic;
 }
 @font-face {
-	font-family: 'Lato-thin-italic';
-	src: url('../fonts//Lato-ThinItalic.ttf') format('truetype');
+  font-family: "Lato-light-italic";
+  src: url("../fonts//Lato-LightItalic.ttf") format("truetype");
   font-style: italic;
 }
-body{
-    margin: 0%;
+@font-face {
+  font-family: "Lato-thin-italic";
+  src: url("../fonts//Lato-ThinItalic.ttf") format("truetype");
+  font-style: italic;
 }
-section{
-	padding: 7rem 0rem;
+body {
+  margin: 0%;
+}
+section {
+  padding: 7rem 0rem;
 }
 
-.primary-text{
-	color: #CECFD2;
+.primary-text {
+  color: #cecfd2;
 }
-.secondary-text{
-	color: #86C232;
+.secondary-text {
+  color: #86c232;
 }
 
-.heading{
-    text-align: center;
-    font-family: lato-bold;
-    font-size: 2.3rem;
-    margin-bottom: 2rem;
-    color: #9fa1bf;
- }
-.loader{
-	background-color: #222629;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.heading {
+  text-align: center;
+  font-family: lato-bold;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  color: #9fa1bf;
 }
-.primary-btn{
-	background-color: #61892f;
-	color: white;
-	border-radius: 10px;
-	padding: 10px 15px 10px 15px;
+.loader {
+  background-color: #222629;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.primary-btn {
+  background-color: #61892f;
+  color: white;
+  border-radius: 10px;
+  padding: 9px 14px;
 }
 
 .primary-btn:disabled,
-.primary-btn.disabled{
+.primary-btn.disabled {
   background-color: #a0a0a0;
 }
 @media (max-width: 768px) {
-	.heading{
-		font-size: 2rem;
-	 }
-	 .primary-btn{
-		padding: 8px 12px;
-	}
+  .heading {
+    font-size: 2rem;
+  }
+  .primary-btn {
+    padding: 6px 10px;
+  }
 }
 
 @media (max-width: 576px) {
-	.heading{
-		font-size: 1.8rem;
-	 }
+  .heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.3rem;
+  }
+  .primary-btn {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
 }

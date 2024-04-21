@@ -7,7 +7,7 @@ export const Contact = () => {
     <div id='contact'>
       <hr/>
         <div className='contact-container'>
-            <h1 className='text-3xl font-bold primary-text'>Get In Touch 💌</h1>
+            <h1 className='contact-heading primary-text'>Get In Touch 💌</h1>
             <div className='social-media-icons'>
               <a target='_blank' href="mailto:patelrutvik039@gmail.com"><FiMail color='#EDEDED'/></a>
               <a className='pl-3' target='_blank' href='https://github.com/rutvik771'><TbBrandGithub color='#EDEDED'/></a>
