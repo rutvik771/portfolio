@@ -9,7 +9,7 @@ export const About = () => {
   }
 
   return (
-    <section id='about'>
+    <div id='about'>
       <div className='about-container'>
         <div className='responsive-container'>
           <div>
@@ -46,6 +46,6 @@ export const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

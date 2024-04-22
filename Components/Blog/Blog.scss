@@ -126,3 +126,13 @@ h1 {
   width: 100%;
   color: #cecfd2;
 }
+
+@media (max-width: 768px) {
+  
+  .blog-thumbnail {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    width: 500px;
+    height: 200px;
+  }
+  }

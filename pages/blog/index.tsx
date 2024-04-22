@@ -59,7 +59,7 @@ const index = () => {
             />
           </Head>
           <div id="blog">
-            <div className="w-full p-8">
+            <div className="w-full lg:p-8 sm:p-4">
               {blogList.length === 0 ? (
                 <div className="blog-not-found">
                   <h2 className="text-3xl font-bold	 text-center py-4">
