@@ -47,9 +47,7 @@ const index = () => {
             />
             <meta
               name="keywords"
-              content={
-                blogList[0] ? blogList[0]?.techStack?.toString() : ""
-              }
+              content={blogList[0] ? blogList[0]?.techStack?.toString() : ""}
             />
             <meta name="robots" content="index, follow" />
             <meta name="author" content="Rutvik Patel" />
@@ -59,7 +57,7 @@ const index = () => {
             />
           </Head>
           <div id="blog">
-            <div className="w-full lg:p-8 sm:p-4">
+            <div className="w-full">
               {blogList.length === 0 ? (
                 <div className="blog-not-found">
                   <h2 className="text-3xl font-bold	 text-center py-4">
@@ -70,8 +68,10 @@ const index = () => {
                 <>
                   <div className="flex justify-center">
                     <div className="w-9/12 text-center">
-                      <h2 className="text-3xl font-bold	">Hey, I'm Rutvik 👋</h2>
-                      <p className="text-lg font-normal py-2 primary-text">
+                      <h2 className="author-introduction-header">
+                        Hey, I'm Rutvik 👋
+                      </h2>
+                      <p className="author-introduction-contain primary-text">
                         Welcome to my blog where I share my thoughts on software
                         engineering, programming, and technology. I write about
                         my experiences in the tech industry, programming
@@ -104,14 +104,14 @@ const index = () => {
                                 height={250}
                               />
                               <div className="p-4">
-                                <h2 className="primary-text text-xl font-bold	">
+                                <h2 className="primary-text blog-card-title">
                                   {blog.title}
                                 </h2>
-                                <div className="flex justify-between pt-2">
+                                <div className="flex justify-between pt-1">
                                   <div className="flex gap-3">
                                     {blog.techStack &&
                                       blog.techStack?.map((tech: any) => (
-                                        <p className="secondary-text text-lg font-normal	">
+                                        <p className="secondary-text blog-card-tech-stack">
                                           {tech}
                                         </p>
                                       ))}
