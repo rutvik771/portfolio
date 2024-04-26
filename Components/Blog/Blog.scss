@@ -58,6 +58,12 @@
 .blog-card:active {
   color: #61892f;
 }
+.blog-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.3em;
+}
 
 h1 {
   margin-bottom: 0.8rem;
@@ -96,7 +102,7 @@ h1 {
 }
 .preview-content h1 {
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
 }
 .preview-content h2 {
   font-size: 2em;
@@ -109,6 +115,8 @@ h1 {
 }
 .preview-content strong {
   color: #86c232;
+  font-size: 0.8em;
+  font-weight: 600;
 }
 .preview-content img {
   display: block;
@@ -148,6 +156,20 @@ h1 {
   .blog-thumbnail {
     width: 500px;
     height: 200px;
+  }
+  .blog-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .mobile-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .preview-container {
+    width: 85%;
   }
 }
 @media (max-width: 576px) {

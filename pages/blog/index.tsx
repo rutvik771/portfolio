@@ -103,11 +103,11 @@ const index = () => {
                                 width={500}
                                 height={250}
                               />
-                              <div className="p-4">
+                              <div className="p-4 mobile-content">
                                 <h2 className="primary-text blog-card-title">
                                   {blog.title}
                                 </h2>
-                                <div className="flex justify-between pt-1">
+                                <div className="blog-details">
                                   <div className="flex gap-3">
                                     {blog.techStack &&
                                       blog.techStack?.map((tech: any) => (
