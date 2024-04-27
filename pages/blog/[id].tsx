@@ -89,7 +89,7 @@ const blog = () => {
           <div id="blog">
             <div className="preview-container">
               <div>
-                <h1 className="text-center text-4xl font-bold">
+                <h1 className="text-center heading">
                   {blogData.title}
                 </h1>
                 <div className="preview-content"></div>

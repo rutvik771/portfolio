@@ -70,23 +70,6 @@ export const Navbar = () => {
   const router = useRouter();
 
   console.log(router.pathname, 'router.pathname');
-  
-
-  // useEffect(() => {
-  //   // Scroll to the "Work" section when the route changes
-  //   const handleRouteChange = () => {
-  //     const element = document.getElementById('work');
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: 'smooth' });
-  //     }
-  //   };
-
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
 
   const handleWorkClick = (e:any) => {
     e.preventDefault();
@@ -112,19 +95,6 @@ export const Navbar = () => {
       line.classList.toggle('active');
     });
   };
-  // const handleRouteChange = () => {
-  //   console.log(router.pathname == "/" ,'router.pathname');
-  //   const element = document.getElementById('work');
-  //   if(router.pathname != "/"){
-  //       router.push('/');
-  //       if (element) {
-  //         element.scrollIntoView({ behavior: 'smooth' });
-  //       }
-  //   }
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // };
 
   return (
 
@@ -145,9 +115,9 @@ export const Navbar = () => {
               About
             </Link>
             <a href='/assets/resume/rutvik_resume.pdf' target="_blank">Resume</a>
-            <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
+            {/* <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
               writing
-            </Link>
+            </Link> */}
           </div>
         </nav>
       </div>
@@ -164,13 +134,16 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="nav-links">
-            <Link href="/work" onClick={openNavbar} className="nav-link">
+            <Link href="#" onClick={(e) =>{handleWorkClick(e),openNavbar()}} className="nav-link">
                 Work
+            </Link>
+            <Link href="/blog" onClick={openNavbar} className="nav-link">
+            Blog
             </Link>
             <Link href="/about" onClick={openNavbar} className="nav-link">
                 About
             </Link>
-            <a href='/assets/resume/rutvik_patel.pdf' target="_blank">Resume</a>
+            <a href='/assets/resume/rutvik_resume.pdf' onClick={openNavbar} className="nav-link" target="_blank">Resume</a>
           </div>
         </nav>
       </div>

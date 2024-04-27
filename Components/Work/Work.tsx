@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { workData } from "./Data";
 import { Stepper } from "react-form-stepper";
 
 export const Work = () => {
   const [currentStep, setCurrentStep] = useState<number>(3);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+    }
+  }, []);
 
   const handleNextStep = async () => {
     setCurrentStep(currentStep + 1);
@@ -15,7 +22,7 @@ export const Work = () => {
   return (
     <div id="work">
       <div>
-        <h2 className='heading'>Where I’ve Worked </h2>
+        <h2 className="heading">Where I’ve Worked </h2>
         <Stepper
           steps={[
             { label: "Jan 2022 - Apr 2022" },
@@ -32,9 +39,9 @@ export const Work = () => {
             inactiveTextColor: "#61892f",
             completedBgColor: "#fff",
             completedTextColor: "#2b7cff",
-            size: "3em",
-            circleFontSize: 14,
-            labelFontSize: 14,
+            size: width < 576 ? "1.3em" : "3em",
+            circleFontSize: width < 576 ? 8 : 14,
+            labelFontSize: width < 576 ? 8 : 14,
             borderRadius: 50,
             fontWeight: "700",
           }}
@@ -76,10 +83,18 @@ export const Work = () => {
                 })}
             </div>
             <div className="flex justify-between pt-8">
-              <button className="primary-btn" disabled={currentStep == 0} onClick={handlePrevStep}>
+              <button
+                className="primary-btn"
+                disabled={currentStep == 0}
+                onClick={handlePrevStep}
+              >
                 Previous
               </button>
-              <button className="primary-btn" disabled={currentStep == 3} onClick={handleNextStep}>
+              <button
+                className="primary-btn"
+                disabled={currentStep == 3}
+                onClick={handleNextStep}
+              >
                 Next
               </button>
             </div>

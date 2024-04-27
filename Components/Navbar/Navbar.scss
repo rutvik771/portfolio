@@ -139,14 +139,17 @@
   }
 
   #mobile-navbar .mobile-navbar .nav-links.active {
-    min-height: 13rem;
+    min-height: 15rem;
     height: 13rem;
     display: block;
   }
 }
 
 @media (max-width: 576px) {
+  #mobile-navbar .mobile-navbar .navbar-container {
+    padding: 1rem 0.5rem;
+  }
   #mobile-navbar .logo {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
