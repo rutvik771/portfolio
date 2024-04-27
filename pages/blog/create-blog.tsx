@@ -4,7 +4,7 @@ import React from 'react'
 const createBlog = () => {
   return (
     <div id='blog'>
-        <BlogPost/>
+        {/* <BlogPost/> */}
     </div>
   )
 }
