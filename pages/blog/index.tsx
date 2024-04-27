@@ -68,7 +68,7 @@ const Index = () => {
                   <div className="flex justify-center">
                     <div className="w-9/12 text-center">
                       <h2 className="author-introduction-header">
-                        Hey, I'm Rutvik 👋
+                        Hey, I&apos;m Rutvik 👋
                       </h2>
                       <p className="author-introduction-contain primary-text">
                         Welcome to my blog where I share my thoughts on software
@@ -109,8 +109,8 @@ const Index = () => {
                                 <div className="blog-details">
                                   <div className="flex gap-3">
                                     {blog.techStack &&
-                                      blog.techStack?.map((tech: any) => (
-                                        <p className="secondary-text blog-card-tech-stack">
+                                      blog.techStack?.map((tech: any,index:number) => (
+                                        <p key={index} className="secondary-text blog-card-tech-stack">
                                           {tech}
                                         </p>
                                       ))}
