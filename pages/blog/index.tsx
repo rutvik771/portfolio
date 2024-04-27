@@ -7,8 +7,7 @@ import Link from "next/link";
 import { getAllData } from "@/firebase/firestore/controller";
 import Loader from "@/Components/Loader";
 
-const index = () => {
-  const router = useRouter();
+const Index = () => {
   const [blogList, setBlogList] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -137,4 +136,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

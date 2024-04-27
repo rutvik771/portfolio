@@ -10,7 +10,7 @@ import {
 } from "@/firebase/firestore/controller";
 import Loader from "@/Components/Loader";
 
-const blog = () => {
+const Blog = () => {
   const router = useRouter();
   const { id } = router.query;
   const [blogData, setBlogData] = useState<any>({
@@ -102,4 +102,4 @@ const blog = () => {
   );
 };
 
-export default blog;
+export default Blog;
