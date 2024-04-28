@@ -70,11 +70,10 @@ const Blog = () => {
     // Return the modified HTML content with highlighted code snippets
     return tempElement.innerHTML;
   };
-  console.log(blogData.techStack?.toString(), "blogData");
   
   return (
     <>
-      {isLoading ? (
+      {isLoading && blogData ? (
         <Loader isLoading={isLoading} />
       ) : (
         <>

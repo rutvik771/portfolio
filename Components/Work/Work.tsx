@@ -56,8 +56,6 @@ export const Work = () => {
                   return item.id === currentStep;
                 })
                 .map((item, index) => {
-                  console.log(item, "item");
-
                   return (
                     <div key={index} className="desiganation-break">
                       <div className="">
