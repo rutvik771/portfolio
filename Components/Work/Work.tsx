@@ -39,9 +39,9 @@ export const Work = () => {
             inactiveTextColor: "#61892f",
             completedBgColor: "#fff",
             completedTextColor: "#2b7cff",
-            size: width < 576 ? "1.3em" : "3em",
-            circleFontSize: width < 576 ? 8 : 14,
-            labelFontSize: width < 576 ? 8 : 14,
+            size: width < 576 ? "1.5em" : "3em",
+            circleFontSize: width < 576 ? 10 : 14,
+            labelFontSize: width < 576 ? 10 : 14,
             borderRadius: 50,
             fontWeight: "700",
           }}

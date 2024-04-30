@@ -55,7 +55,7 @@ const Index = () => {
               content="width=device-width, initial-scale=1.0"
             />
           </Head>
-          <div id="blog">
+          <div id="blogs">
             <div className="w-full">
               {blogList.length === 0 ? (
                 <div className="blog-not-found">
@@ -86,7 +86,7 @@ const Index = () => {
                         {blogList.map((blog: any) => (
                           <Link
                             key={blog.id}
-                            target="_blank"
+                            // target="_blank"
                             href={`/blog/${blog.id}`}
                           >
                             <div className="blog-card">
