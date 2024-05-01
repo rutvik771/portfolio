@@ -1,12 +1,33 @@
-import BlogPost from '@/Components/Blog/BlogPost'
-import React from 'react'
+import BlogPost from "@/Components/Blog/BlogPost";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-const createBlog = () => {
+const CreateBlog = () => {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const isAuthenticated = checkPassword();
+    if (!isAuthenticated) {
+      return;
+    }
+    setIsAuthenticated(true);
+  }, []);
+  const checkPassword = () => {
+    const password = prompt("Enter your password:");
+    // You can replace 'yourPassword' with your actual password
+    if (password === process.env.NEXT_PUBLIC_PASSWORD) {
+      return true;
+    } else {
+      router.push("/"); // Redirect to home page
+      return false;
+    }
+  };
   return (
-    <div id='blog'>
-        {/* <BlogPost/> */}
+    <div id="blog">
+      {!isAuthenticated ? <h1>Unauthorized Access</h1> : <BlogPost />}
     </div>
-  )
-}
+  );
+};
 
-export default createBlog
+export default CreateBlog;
