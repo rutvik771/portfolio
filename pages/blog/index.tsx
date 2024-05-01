@@ -86,7 +86,7 @@ const Index = () => {
                         {blogList.map((blog: any) => (
                           <Link
                             key={blog.id}
-                            // target="_blank"
+                            target="_blank"
                             href={`/blog/${blog.id}`}
                           >
                             <div className="blog-card">
