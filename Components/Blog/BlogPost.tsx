@@ -56,8 +56,6 @@ const BlogPost = () => {
       return console.log(error);
     }
   };
-
-  console.log(blogData, "blogData");
   
   return (
     <>

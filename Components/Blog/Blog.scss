@@ -11,7 +11,8 @@
 #blogs {
   background-color: #222629;
   color: #cecfd2;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -153,13 +154,19 @@ h1 {
   margin: 2rem 0rem;
   background-color: #16191b;
 }
-.preview-content ol {
+.preview-content ol{
   padding-left: 2em;
   list-style: decimal;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  opacity: 0.8;
 }
-.preview-content ul {
+.preview-content ul{
   padding-left: 2em;
   list-style: disc;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  opacity: 0.8;
 }
 .preview-content .ql-align-center {
   text-align: center;

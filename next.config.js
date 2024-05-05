@@ -4,7 +4,7 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 });
 const nextConfigPWA = withPWA({
-  reactStrictMode: true,
+  reactStrictMode: false,
   pwa: {
     dest: 'public',
   }
