@@ -25,7 +25,7 @@ const CreateBlog = () => {
   };
   return (
     <div id="blog">
-      {!isAuthenticated ? <h1>Unauthorized Access</h1> : <BlogPost />}
+      {!isAuthenticated ? <div className="h-screen"><h1>Unauthorized Access</h1></div> : <BlogPost />}
     </div>
   );
 };

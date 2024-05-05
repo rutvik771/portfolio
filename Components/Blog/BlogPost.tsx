@@ -57,6 +57,8 @@ const BlogPost = () => {
     }
   };
 
+  console.log(blogData, "blogData");
+  
   return (
     <>
       {preview ? (
