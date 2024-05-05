@@ -50,6 +50,17 @@
   #project .main-content {
     flex-direction: column;
   }
+  #project .project-introduction:hover {
+    box-shadow: -5px -5px 15px 0px rgb(255 255 255 / 9%),
+      10px 10px 15px 0px rgb(0 0 0 / 60%);
+    transition: all 500ms ease;
+  }
+  #project .project-introduction:hover .project-name {
+    color: #cecfd2;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+      opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+      transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  }
 }
 @media (max-width: 576px) {
   #project {
