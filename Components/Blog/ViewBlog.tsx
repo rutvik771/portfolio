@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
+import DOMPurify from 'dompurify'; // Import DOMPurify for sanitization
 
 
 const ViewBlog = ({
@@ -12,8 +13,10 @@ const ViewBlog = ({
 }: any) => {
 
   useEffect(() => {
+    // Sanitize the HTML content
+    const sanitizedContent = DOMPurify.sanitize(blogData?.content);
     // Highlight code snippets after component mounts
-    const highlightedContent: any = highlightCodeSnippets(blogData?.content);
+    const highlightedContent: any = highlightCodeSnippets(sanitizedContent);
     // Set the modified content with highlighted code snippets
     let selector = document.querySelector(".preview-content") as any;
     selector.innerHTML = highlightedContent;
