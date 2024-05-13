@@ -6,9 +6,10 @@ import Editor from "../Editor/Editor";
 import {
   addData,
   uploadFile,
-  getAllData,
+  updateData,
 } from "@/firebase/firestore/controller";
 import ViewBlog from "./ViewBlog";
+import { title } from "process";
 
 type BlogData = {
   slug: string;
@@ -40,10 +41,8 @@ const BlogPost = () => {
       .replace(/^-+|-+$/g, "");
     return slug;
   }
-
   const handlePublishBlog = async () => {
     let slug = generateSlug(blogData.title);
-
     const imgURL = await uploadFile(selectedImage);
     const data = {
       ...blogData,
@@ -56,7 +55,7 @@ const BlogPost = () => {
       return console.log(error);
     }
   };
-  
+
   return (
     <>
       {preview ? (
@@ -100,6 +99,7 @@ const BlogPost = () => {
                   onChange={(e) => {
                     setBlogData({ ...blogData, title: e.target.value });
                   }}
+                  value={blogData?.title}
                   placeholder="Here is a title"
                   size="lg"
                 />
@@ -108,7 +108,7 @@ const BlogPost = () => {
                 <h2 className="text-center text-3xl	py-2">Tech Stack</h2>
                 <Textarea
                   variant={"unstyled"}
-                  // value={value}
+                  value={blogData.techStack}
                   w={"30em"}
                   bg={"#222629"}
                   p={"1em"}
