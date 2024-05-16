@@ -60,10 +60,10 @@ const Blog = () => {
     tempElement.innerHTML = content;
 
     // Select all <pre> elements containing code snippets
-    const codeSnippets = tempElement.querySelectorAll("pre");
+    const codeSnippets = tempElement?.querySelectorAll("pre");
 
     // Apply syntax highlighting to each code snippet
-    codeSnippets.forEach((snippet) => {
+    codeSnippets?.forEach((snippet) => {
       hljs.highlightBlock(snippet);
     });
 
