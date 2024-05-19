@@ -14,10 +14,28 @@ const EditBlog = () => {
   const { id } = router.query;
   const [blogData, setBlogData] = useState<any>(null);
   const [preview, setPreview] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  useEffect(() => {
+    const isAuthenticated = checkPassword();
+    if (!isAuthenticated) {
+      return;
+    }
+    setIsAuthenticated(true);
+  }, []);
   useEffect(() => {
     getData();
   }, [id]);
+  const checkPassword = () => {
+    const password = prompt("Enter your password:");
+    // You can replace 'yourPassword' with your actual password
+    if (password === process.env.NEXT_PUBLIC_PASSWORD) {
+      return true;
+    } else {
+      router.push("/"); // Redirect to home page
+      return false;
+    }
+  };
 
   const getData = async () => {
     try {
@@ -52,83 +70,89 @@ const EditBlog = () => {
       return console.log(error);
     }
   };
-  console.log(blogData, "blogData");
-  
   return (
     <div id="blog">
-      {preview ? (
-        <ViewBlog
-          blogData={blogData}
-          setBlogData={setBlogData}
-          preview={preview}
-          setPreview={setPreview}
-          handlePublishBlog={handlePublishBlog}
-        />
-      ) : 
-        
-          blogData &&
-          <div className="editor-container">
-            <div className="flex justify-center my-3">
-              <div>
-                <div>
-                  <h2 className="text-center text-3xl	py-2">Title</h2>
-                  <Textarea
-                    variant={"unstyled"}
-                    w={"30em"}
-                    bg={"#222629"}
-                    p={"1em"}
-                    mt={4}
-                    onChange={(e) => {
-                      setBlogData({ ...blogData, title: e.target.value });
-                    }}
-                    value={blogData.title}
-                    placeholder="Here is a title"
-                    size="lg"
-                  />
+      {!isAuthenticated ? (
+        <div className="h-screen">
+          <h1>Unauthorized Access</h1>
+        </div>
+      ) : (
+        <>
+          {preview ? (
+            <ViewBlog
+              blogData={blogData}
+              setBlogData={setBlogData}
+              preview={preview}
+              setPreview={setPreview}
+              handlePublishBlog={handlePublishBlog}
+            />
+          ) : (
+            blogData && (
+              <div className="editor-container">
+                <div className="flex justify-center my-3">
+                  <div>
+                    <div>
+                      <h2 className="text-center text-3xl	py-2">Title</h2>
+                      <Textarea
+                        variant={"unstyled"}
+                        w={"30em"}
+                        bg={"#222629"}
+                        p={"1em"}
+                        mt={4}
+                        onChange={(e) => {
+                          setBlogData({ ...blogData, title: e.target.value });
+                        }}
+                        value={blogData.title}
+                        placeholder="Here is a title"
+                        size="lg"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-center text-3xl	py-2">Tech Stack</h2>
+                      <Textarea
+                        variant={"unstyled"}
+                        value={blogData.techStack}
+                        w={"30em"}
+                        bg={"#222629"}
+                        p={"1em"}
+                        mt={4}
+                        onChange={(e) => {
+                          setBlogData({
+                            ...blogData,
+                            techStack: e.target.value.split(","),
+                          });
+                        }}
+                        placeholder="Here is a tech Stack"
+                        size="lg"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <h2 className="text-center text-3xl	py-2">Tech Stack</h2>
-                  <Textarea
-                    variant={"unstyled"}
-                    value={blogData.techStack}
-                    w={"30em"}
-                    bg={"#222629"}
-                    p={"1em"}
-                    mt={4}
-                    onChange={(e) => {
-                      setBlogData({
-                        ...blogData,
-                        techStack: e.target.value.split(","),
-                      });
-                    }}
-                    placeholder="Here is a tech Stack"
-                    size="lg"
+                  <h2 className="text-center text-3xl	py-4">Add Your Content</h2>
+                  <Editor
+                    blogData={blogData}
+                    setBlogData={setBlogData}
+                    preview={preview}
+                    setPreview={setPreview}
                   />
+                </div>
+                <div className="pt-12">
+                  <button
+                    className="primary-btn"
+                    type="button"
+                    onClick={() => {
+                      setPreview(true);
+                    }}
+                  >
+                    Preview
+                  </button>
                 </div>
               </div>
-            </div>
-            <div>
-              <h2 className="text-center text-3xl	py-4">Add Your Content</h2>
-              <Editor
-                blogData={blogData}
-                setBlogData={setBlogData}
-                preview={preview}
-                setPreview={setPreview}
-              />
-            </div>
-            <div className="pt-12">
-              <button
-                className="primary-btn"
-                type="button"
-                onClick={() => {
-                  setPreview(true);
-                }}
-              >
-                Preview
-              </button>
-            </div>
-          </div>
-      }
+            )
+          )}
+        </>
+      )}
     </div>
   );
 };
