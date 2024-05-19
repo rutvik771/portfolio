@@ -21,15 +21,19 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getData();
+    if (id) {
+      getData();
+    }
   }, [id]);
 
   useEffect(() => {
+    if (blogData.content) {
     // Highlight code snippets after component mounts
     const highlightedContent: any = highlightCodeSnippets(blogData?.content);
     // Set the modified content with highlighted code snippets
     let selector = document.querySelector(".preview-content") as any;
     selector.innerHTML = highlightedContent;
+    }
   }, [blogData.content]);
 
   const getData = async () => {
@@ -60,11 +64,11 @@ const Blog = () => {
     tempElement.innerHTML = content;
 
     // Select all <pre> elements containing code snippets
-    const codeSnippets = tempElement?.querySelectorAll("pre");
+    const codeSnippets = tempElement?.querySelectorAll("pre code");
 
     // Apply syntax highlighting to each code snippet
-    codeSnippets?.forEach((snippet) => {
-      hljs.highlightBlock(snippet);
+    codeSnippets?.forEach((snippet:any) => {
+      hljs.highlightElement(snippet);
     });
 
     // Return the modified HTML content with highlighted code snippets
