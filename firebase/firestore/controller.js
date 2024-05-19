@@ -41,6 +41,26 @@ export async function addData(collection, id, data) {
 
   return { result, error };
 }
+export async function updateData(collection, id, data) {
+  let result = null;
+  let error = null;
+
+  try {
+    const docRef = doc(db, collection, id);
+    const docSnapshot = await getDoc(docRef);
+
+    if (docSnapshot.exists()) {
+      await setDoc(docRef, data, { merge: true });
+      result = "Document updated successfully.";
+    } else {
+      error = "Document does not exist.";
+    }
+  } catch (e) {
+    error = e;
+  }
+
+  return { result, error };
+}
 
 export async function getDataById(collection, id) {
   let docRef = doc(db, collection, id);
