@@ -148,7 +148,7 @@ h1 {
   overflow-x: auto;
   max-width: 80vw;
   padding: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 0.7rem;
   border: none;
   margin: 2rem 0rem;
@@ -235,6 +235,12 @@ h1 {
     font-size: 1.1rem;
     margin: 1.5rem 0rem;
   }
+  .preview-content ol{
+    font-size: 1.1em;
+  }
+  .preview-content ul{
+    font-size: 1.1em;
+  }
 }
 @media (max-width: 576px) {
   .blog-grid {
@@ -277,6 +283,12 @@ h1 {
   .preview-content p {
     font-size: 1em;
     line-height: 1.5em;
+  }
+  .preview-content ol{
+    font-size: 1em;
+  }
+  .preview-content ul{
+    font-size: 1em;
   }
   .preview-content pre {
     max-width: 90vw;
