@@ -44,7 +44,7 @@ export const Navbar = () => {
             <Link href="#" onClick={handleWorkClick} className={router.pathname.includes("#work") ? "link-active" : ""}>
               Work
             </Link>
-            <Link href="/blog" className={router.pathname == "/blog" ? "link-active" : ""}>
+            <Link href="/blog" className={router.pathname.includes("blog") ? "link-active" : ""}>
              Blog
             </Link>
             <Link href="/about" className={router.pathname == "/about" ? "link-active" : ""}>
