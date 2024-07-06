@@ -47,10 +47,8 @@ const Blog = () => {
       }
 
       if (result?.exists()) {
-        const userData: any = result.data();
+        const userData: any = result?.data();
         setBlogData(userData);
-      } else {
-        console.log("No such document!");
       }
       setIsLoading(false);
     } catch (error) {
