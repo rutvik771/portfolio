@@ -50,7 +50,7 @@ export const Navbar = () => {
             <Link href="/about" className={router.pathname == "/about" ? "link-active" : ""}>
               About
             </Link>
-            <a href='/assets/resume/rutvik_resume.pdf' target="_blank">Resume</a>
+            <a href='/assets/resume/resume.pdf' target="_blank">Resume</a>
             {/* <Link href="/blog/create-blog" className={router.pathname == "/blog/create-blog" ? "link-active" : ""}>
               writing
             </Link> */}
@@ -79,7 +79,7 @@ export const Navbar = () => {
             <Link href="/about" onClick={openNavbar} className="nav-link">
                 About
             </Link>
-            <a href='/assets/resume/rutvik_resume.pdf' onClick={openNavbar} className="nav-link" target="_blank">Resume</a>
+            <a href='/assets/resume/resume.pdf' onClick={openNavbar} className="nav-link" target="_blank">Resume</a>
           </div>
         </nav>
       </div>
