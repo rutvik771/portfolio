@@ -18,19 +18,41 @@ export const Work = () => {
   const handlePrevStep = () => {
     setCurrentStep(currentStep - 1);
   };
-
+  const steps = [
+    { label: "Jan 2022 - Apr 2022",step:1,onClick: () => {setCurrentStep(0)} },
+    { label: "May 2022  - Jun 2022",step:2, onClick: () => {setCurrentStep(1)} },
+    { label: "July 2022 - Sept 2023",step:3, onClick: () => {setCurrentStep(2)} },
+    { label: "Aug 2023 - present",step:4, onClick: () => {setCurrentStep(3)} }
+  ]
+console.log(currentStep,'cu')
   return (
     <div id="work">
       <div>
         <h2 className="heading">Where I’ve Worked </h2>
         <Stepper
-          steps={[
-            { label: "Jan 2022 - Apr 2022" },
-            { label: "May 2022  - Jun 2022" },
-            { label: "July 2022 - Sept 2023" },
-            { label: "Aug 2023 - present" },
-          ]}
           activeStep={currentStep}
+          steps={steps.map((step, index) => {
+            return (
+              <div
+                onClick={step.onClick}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <p
+                             style={{
+                              backgroundColor:"green",
+                              padding:"10px 18px",
+                              borderRadius:"50%"
+                            }}
+                >{step.step}</p>
+                <p>{step.label}</p>
+              </div>
+            );
+          })}
           styleConfig={{
             key: currentStep,
             activeBgColor: "#61892f",
